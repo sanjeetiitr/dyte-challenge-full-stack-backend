@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 var cors = require("cors");
 const app = express();
-const port = 4000;
+const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
@@ -30,5 +30,5 @@ app.post("/", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
 });
